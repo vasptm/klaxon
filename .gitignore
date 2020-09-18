@@ -1,0 +1,10 @@
+.env
+.DS_Store
+
+/.bundle
+backups/
+
+/log/*
+!/log/.keep
+/tmp
+pull_dev_database.sh
