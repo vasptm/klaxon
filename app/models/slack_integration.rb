@@ -36,7 +36,7 @@ class SlackIntegration < ApplicationRecord
     puts "slack_integration#send_notification #{self.channel}"
 
     page_url = change&.after&.page&.url
-    message = "VASP Website Monitoring: #{page_url}"
+    message = "VASP Website Monitoring: #{page.domain.truncate(40)}"
     text = "#{page_url} changed!\nSee latest changes here: #{page_change_url(change)}"
 
     icon_url = URI.join(root_url, '/images/klaxon-logo-100px.png').to_s
