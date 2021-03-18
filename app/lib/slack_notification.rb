@@ -1,6 +1,6 @@
 class SlackNotification
   def self.perform(url, payload)
-    url = "https://api.opsgenie.com/v2/alerts"
+    url = "https://api.eu.opsgenie.com/v2/alerts"
     json = payload.to_json
     og_api = ENV['OG_API']
     request = HTTParty.post(url, body: json, headers: {'Content-Type' => "application/json", 'Authorization' => "GenieKey #{og_api}"})
